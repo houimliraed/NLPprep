@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>ML Sentiment Analysis</h1>
+    <h6>check one at a time !</h6>
+    <form method="POST">
+        <input type="text" name="text_input" placeholder="Enter your text" required>
+        <button type="submit">Analyze</button>
+    </form>
+    {% if result %}
+    <div class="result">
+        <strong>Result:</strong> {{ result }}
+    </div>
+    {% endif %}
+    <h6>Mass analysis ? no problem</h6>
+    <form >
+        <input type="file" name="uploading"  required>
+        <button type="submit">Check them all !</button>
+    </form>
+
+</body>
+</html>
